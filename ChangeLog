@@ -1,0 +1,30 @@
+CHANGES IN spacodiR VERSION 0.11
+2011-04-01
+  * added cophen() for rapid computation of the cophenetic matrix 
+  * released to CRAN
+
+2011-03-25
+  * removed vmat() as it will be incorporated into a forthcoming update of 'geiger' and the forthcoming package 'auteur'; this revision no longer requires Rcpp as a dependency
+
+2011-03-09
+  * to improve transparency of functionality with particular classes of objects, several functions were renamed:
+ 	phy.dot.plot to phy.dotplot()
+	Bst.permutation.plot to spacodi.permutplot()
+	spacodi.tree.plot to spacodi.treeplot()
+	node.time.extractor to phy.nodetimes()
+	deresolve.phy to phy.deresolve()
+	randomization.test.sp to resamp.test()
+  * generalized plotting behavior to handle any phylogenetic- or species-diversity partitioning estimator from spacodi.calc() and spacodi.by.nodes()
+
+2011-03-07
+  * added capability for partial tree randomization with resamp.phy()
+  * removed trait evolutionary functions: K.by.nodes(), Kcalc.vcv() 
+  * allowed phylogeny or trait values to be represented as a cophenetic or distance matrix, respectively in spacodi.calc()
+
+2011-03-06
+  * added vmat() for fast computation of variance-covariance representation of the phylogenetic tree 
+  * pooled related functions into fewer files within R/
+  * removed r.sp.plot() and sim.spacodi()
+
+2011-02-26
+  * added deresolve.R to force multichotomies in a tree
