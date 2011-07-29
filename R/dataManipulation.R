@@ -1,6 +1,6 @@
 ######
 check.distmat=function(obj,tol=1e-9) {
-	if(class(obj)=="matrix") {
+	if(class(obj)=="matrix" & length(unique(dim(obj)))==1) {
 		if(all(diag(obj)-0<=tol)) {
 			return(TRUE)
 		} else {

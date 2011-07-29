@@ -1,4 +1,7 @@
 CHANGES IN spacodiR VERSION 0.11
+2011-07-29
+  * fixed bug in check.distmat (in some cases a distance matrix was detected when untrue)
+
 2011-04-01
   * added cophen() for rapid computation of the cophenetic matrix 
   * released to CRAN
