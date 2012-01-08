@@ -233,10 +233,10 @@ double *dvector(long int nl, long int nh)
 	double *v;
 
 	v=(double *)malloc((size_t) ((nh-nl+1+NR_END)*sizeof(double))); 
-	if (!v) {
-		write(ERRORFILE,"\nallocation failure in dvector()");
-		exit(1);
-	}
+//	if (!v) {
+//		write(ERRORFILE,"\nallocation failure in dvector()");
+//		exit(1);
+//	}
 	return v-nl+NR_END;
 }
 
@@ -256,19 +256,19 @@ double **dmatrix(long nrl, long nrh,long ncl, long nch)
 	
 	/*allocate pointers to rows*/
 	m=(double **) malloc((size_t)((nrow+NR_END)*sizeof(double *)));
-	if (!m) {
-		write(ERRORFILE,"\nallocation failure 1 in matrix()");
-		exit(1);
-	}
+//	if (!m) {
+//		write(ERRORFILE,"\nallocation failure 1 in matrix()");
+//		exit(1);
+//	}
 	m += NR_END;
 	m -= nrl;
 	
 	/*allocate rows and set pointers to them*/
 	m[nrl]=(double *) malloc((size_t)((nrow*ncol+NR_END)*sizeof(double)));
-	if (!m[nrl]) {
-		write(ERRORFILE,"\nallocation failure 2 in matrix()");
-		exit(1);
-	}
+//	if (!m[nrl]) {
+//		write(ERRORFILE,"\nallocation failure 2 in matrix()");
+//		exit(1);
+//	}
 	m[nrl] += NR_END;
 	m[nrl] -= ncl;
 	
@@ -294,19 +294,19 @@ int **imatrix(long nrl, long nrh,long ncl, long nch)
 	
 	/*allocate pointers to rows*/
 	m=(int **) malloc((size_t)((nrow+NR_END)*sizeof(int*)));
-	if (!m) {
-		write(ERRORFILE,"\nallocation failure 1 in imatrix()");
-		exit(1);
-	}
+//	if (!m) {
+//		write(ERRORFILE,"\nallocation failure 1 in imatrix()");
+//		exit(1);
+//	}
 	m += NR_END;
 	m -= nrl;
 	
 	/*allocate rows and set pointers to them*/
 	m[nrl]=(int *) malloc((size_t)((nrow*ncol+NR_END)*sizeof(int)));
-	if (!m[nrl]) {
-		write(ERRORFILE,"\nallocation failure 2 in imatrix()");
-		exit(1);
-	}
+//	if (!m[nrl]) {
+//		write(ERRORFILE,"\nallocation failure 2 in imatrix()");
+//		exit(1);
+//	}
 	m[nrl] += NR_END;
 	m[nrl] -= ncl;
 	
@@ -333,28 +333,28 @@ float ***f3tensor(long nrl, long nrh,long ncl, long nch,long ndl,long ndh)
 	
 	/*allocate pointers to pointers to rows*/
 	t=(float ***) malloc((size_t)((nrow+NR_END)*sizeof(float **)));
-	if (!t) {
-		write(ERRORFILE,"\nallocation failure 1 in f3tensor()");
-		exit(1);
-	}
+//	if (!t) {
+//		write(ERRORFILE,"\nallocation failure 1 in f3tensor()");
+//		exit(1);
+//	}
 	t += NR_END;
 	t -= nrl;
 	
 	/*allocate pointers to rows and set pointers to them*/
 	t[nrl]=(float **) malloc((size_t)((nrow*ncol+NR_END)*sizeof(float *)));
-	if (!t[nrl]) {
-		write(ERRORFILE,"\nallocation failure 2 in f3tensor()");
-		exit(1);
-	}
+//	if (!t[nrl]) {
+//		write(ERRORFILE,"\nallocation failure 2 in f3tensor()");
+//		exit(1);
+//	}
 	t[nrl] += NR_END;
 	t[nrl] -= ncl;
 	
 	/*allocate rows and set pointers to them*/
 	t[nrl][ncl]=(float *) malloc((size_t)((nrow*ncol*ndep+NR_END)*sizeof(float )));
-	if (!t[nrl][ncl]) {
-		write(ERRORFILE,"\nallocation failure 3 in f3tensor()");
-		exit(1);
-	}
+//	if (!t[nrl][ncl]) {
+//		write(ERRORFILE,"\nallocation failure 3 in f3tensor()");
+//		exit(1);
+//	}
 	t[nrl][ncl] += NR_END;
 	t[nrl][ncl] -= ndl;
 

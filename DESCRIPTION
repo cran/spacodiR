@@ -1,8 +1,8 @@
 Package: spacodiR
 Type: Package
 Title: Spatial and Phylogenetic Analysis of Community Diversity
-Version: 0.11.07292011
-Date: 2011-07-29
+Version: 0.12.0108
+Date: 2012-01-08
 Author: Jonathan Eastman, Timothy Paine, and Olivier Hardy
 Maintainer: Jonathan Eastman <jonathan.eastman@gmail.com>
 Depends: picante, colorspace, Rcpp
@@ -13,6 +13,6 @@ Description: SPACoDi is primarily designed to characterise the
         plots.
 License: GPL (>= 2)
 LazyLoad: yes
-Packaged: 2011-07-30 01:08:51 UTC; jeastman
+Packaged: 2012-01-09 18:11:58 UTC; jeastman
 Repository: CRAN
-Date/Publication: 2011-07-30 06:33:24
+Date/Publication: 2012-01-09 21:19:41

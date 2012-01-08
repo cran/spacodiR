@@ -1,4 +1,10 @@
 CHANGES IN spacodiR VERSION 0.11
+2011-01-08
+ * adding formulae to spacodi.calc documentation file
+
+2011-01-07
+ * fixed bug in spacodi.by.nodes to use all reshuffling iterations
+
 2011-07-29
   * fixed bug in check.distmat (in some cases a distance matrix was detected when untrue)
 

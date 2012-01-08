@@ -150,7 +150,7 @@ function(sp.plot, outfile){
 	names=names(sp.plot)
 	for(n in 1:length(names)){cat(c("\t",names[n]),file=outfile,append=TRUE,sep="")}
 	cat("\n",file=outfile,append=TRUE,sep="")
-	write.table(sp.plot,outfile,quote=FALSE,col=FALSE,append=TRUE,sep="\t")
+	write.table(sp.plot,outfile,quote=FALSE,col.names=FALSE,append=TRUE,sep="\t")
 }
 
 
@@ -173,7 +173,7 @@ function(data, picante=FALSE, outfile=NULL){
 	}
 	out=as.data.frame(out)
 	names(out)=c("plot","samples","species")
-	if(!is.null(outfile)){write.table(out,outfile,quote=FALSE,row=FALSE,col=FALSE,sep="\t")}
+	if(!is.null(outfile)){write.table(out,outfile,quote=FALSE,row.names=FALSE,col.names=FALSE,sep="\t")}
 	return(out)
 }
 

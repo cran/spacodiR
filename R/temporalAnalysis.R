@@ -129,7 +129,7 @@ r.rep = 10000, ...)
                 rand.array[node, 2] = nn
                 rand.array[node, 3] = obs
                 rand.array[node, 4] = ifelse(length(exp) != 0, 
-											 mean(exp), NA)
+											 mean(unlist(exp)), NA)
                 rand.array[node, 5] = length(exp)
             }
             r.test = as.data.frame(rand.array)
