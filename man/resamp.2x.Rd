@@ -16,8 +16,8 @@
   A resampling procedure for a species-by-plots matrix, based on Gotelli swapping. 
   Shuffles abundances within a pair of plots and for a pair of species.  The \code{level} defines 
   the degree of sampling, with larger values dictating a higher level of reshuffling.  For instance, 
-  if \code{level = 0.4} and the dataset involves 5 species and 10 plots, a total of 20 (\code{0.4x5x10}) 
-  Gotelli swaps are performed.
+  if \code{level = 0.4} and the dataset involves 5 species and 10 plots, a total of 20 (\code{0.4x5x10}) Gotelli-like swaps are performed.  The number of swaps is always rounded up such that at least one swap is performed (i.e., when \code{level=0}).
+ 
 }
 \value{A shuffled dataset}
 

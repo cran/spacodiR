@@ -1,9 +1,9 @@
-cfd78cdf5d08394af4badc1626980829 *ChangeLog
-062e18e63a4b6868c6f03e2fa804140d *DESCRIPTION
+c0f9667ab752573a677f7b692f5320ab *ChangeLog
+86598b17e8625f4f45eef6006974b06b *DESCRIPTION
 d2b989a27c721de81eee91ed6de1ec0b *NAMESPACE
 179cdd5cbc298bf79ae3a62d8e86818b *R/cophen.R
 86744233d8f2e9810b92087be2acb222 *R/dataManipulation.R
-65995746d570cc503631e9109ac5026f *R/dataResampling.R
+4435a1a24995e3641463a8c6bc4f4f9c *R/dataResampling.R
 68f20a7ea80c162859cf6ef68bafe361 *R/phylogeneticUtilities.R
 e296616928dc141d938a1a335b9fa720 *R/plotting.R
 cbc7dcfae938221dd51aa6657d3101e2 *R/spacodi-internal.R
@@ -21,10 +21,10 @@ bdcdda14bab73d2902fd99f8b20570cf *man/phy.dotplot.Rd
 4b21036ae9599d9c563ac19caac22a25 *man/resamp.1a.Rd
 521021197cc99e676f85118a97358575 *man/resamp.1s.Rd
 634e9ce89c7bf6e75be2204fc7d9f071 *man/resamp.2s.Rd
-7a90e2e988297f723766df0700d9ad89 *man/resamp.2x.Rd
+6ad1f08b9f6e6c4655921cfd0dca7233 *man/resamp.2x.Rd
 52922c0c5f504bf65a536fcc41baa5f5 *man/resamp.3i.Rd
 17539ef14bc96307740dafdd3211c99a *man/resamp.3t.Rd
-e832ae97a1d03905fef2e5c5e84c24e1 *man/resamp.3x.Rd
+67df815972fc8e465c68b6ddbe22324e *man/resamp.3x.Rd
 9a8bc342c064e4384a86449acb2d0289 *man/resamp.phy.Rd
 0c77994fc8fe0ee72282e7252cf51ed5 *man/resamp.test.Rd
 4c334b531cef86337234786343ab3199 *man/sp.example.Rd

@@ -18,7 +18,7 @@
   Shuffles abundances within species and for a pair of plots.  The \code{level} defines
   the degree of sampling, with larger values dictating a higher level of reshuffling.
   For instance, if \code{level = 0.1} and the dataset involves 20 species and 20 plots, 
-  a total of 40 (\code{0.1x20x20}) Gotelli swaps are performed.
+  a total of 40 (\code{0.1x20x20}) Gotelli-like swaps are performed. The number of swaps is always rounded up such that at least one swap is performed (i.e., when \code{level=0}).
 }
 
 \value{A shuffled dataset}

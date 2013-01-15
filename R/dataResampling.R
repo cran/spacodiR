@@ -50,21 +50,40 @@ function(obj) {
 
 
 ######
-resamp.2x <-
-function(obj, level=0.1) {
-	swaps=round(level*ncol(obj)*nrow(obj))
-	orig=obj
-	for(swap in 1:swaps){
-		rcol=sample(1:ncol(obj),2)
-		rspp=sample(1:nrow(obj),2)
-		obj[rspp[1],rcol[1]]=orig[rspp[2],rcol[1]]
-		obj[rspp[2],rcol[1]]=orig[rspp[1],rcol[1]]
-		obj[rspp[1],rcol[2]]=orig[rspp[2],rcol[2]]
-		obj[rspp[2],rcol[2]]=orig[rspp[1],rcol[2]]
-		orig=obj
+.gswapcheck=function(mat){
+	if(sum(cc<-mat==0)==2){
+		d=diag(cc)
+		if(all(d) | !any(d)) return(TRUE) else return(FALSE)
+	} else if(any(cc)){
+		if(all(cc)) return(TRUE) else return(FALSE)
+	} else {
+		return(TRUE)
 	}
-	if(sum(obj)!=sum(orig))warning("A poor result is likely.")
-	return(obj)
+}
+
+######
+resamp.2x=function (obj, level = 0.1)
+{
+    swaps = max(round(level * ncol(obj) * nrow(obj)),1)
+    X = sum(obj)
+    orig=obj
+    for (swap in 1:swaps) {
+    	while(1){
+    		rcol = sample(1:ncol(obj), 2)
+        	rspp = sample(1:nrow(obj), 2)
+        	if(.gswapcheck(obj[rspp,rcol])){
+        		obj[rspp[1], rcol[1]] = orig[rspp[2], rcol[1]]
+        		obj[rspp[2], rcol[1]] = orig[rspp[1], rcol[1]]
+        		obj[rspp[1], rcol[2]] = orig[rspp[2], rcol[2]]
+        		obj[rspp[2], rcol[2]] = orig[rspp[1], rcol[2]]
+        		orig = obj
+    			break()
+        	}
+     	}
+    }
+    if (sum(obj) != X)
+    warning("A poor result is likely.")
+    return(obj)
 }
 
 
@@ -135,21 +154,28 @@ function(obj, dmat=NULL) {
 }
 
 ######
-resamp.3x <-
-function(obj, level=0.1) {
-	swaps=round(level*ncol(obj)*nrow(obj))
-	orig=obj
-	for(swap in 1:swaps){
-		rcol=sample(1:ncol(obj),2)
-		rspp=sample(1:nrow(obj),2)
-		obj[rspp[1],rcol[1]]=orig[rspp[1],rcol[2]]
-		obj[rspp[1],rcol[2]]=orig[rspp[1],rcol[1]]
-		obj[rspp[2],rcol[1]]=orig[rspp[2],rcol[2]]
-		obj[rspp[2],rcol[2]]=orig[rspp[2],rcol[1]]
-		orig=obj
-	}
-	if(sum(obj)!=sum(orig))warning("A poor result is likely.")
-	return(obj)
+resamp.3x=function (obj, level = 0.1)
+{
+    swaps = max(round(level * ncol(obj) * nrow(obj)),1)
+    X = sum(obj)
+    orig=obj
+    for (swap in 1:swaps) {
+    	while(1){
+    		rcol = sample(1:ncol(obj), 2)
+        	rspp = sample(1:nrow(obj), 2)
+        	if(.gswapcheck(obj[rspp,rcol])){
+        		obj[rspp[1], rcol[1]] = orig[rspp[1], rcol[2]]
+        		obj[rspp[1], rcol[2]] = orig[rspp[1], rcol[1]]
+        		obj[rspp[2], rcol[1]] = orig[rspp[2], rcol[2]]
+        		obj[rspp[2], rcol[2]] = orig[rspp[2], rcol[1]]
+        		orig = obj
+        		break()
+        	}
+     	}
+    }
+    if (sum(obj) != X)
+    warning("A poor result is likely.")
+    return(obj)
 }
 
 
